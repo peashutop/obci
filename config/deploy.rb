@@ -6,12 +6,15 @@ set :user, "jacob"
 set :port, 37658
 # password not needed - we've got ssh key
 set :branch, "master"
+set :use_sudo,    false
+
 
 role :web, "bc.peashutop.com"                          # Your HTTP server, Apache/etc
 role :app, "bc.peashutop.com"                          # This may be the same as your `Web` server
 role :db,  "bc.peashutop.com", :primary => true # This is where Rails migrations will run
 
 set :deploy_to, "/home/jacob/#{application}"
+
 
 #role :db,  "your slave db-server here"
 
