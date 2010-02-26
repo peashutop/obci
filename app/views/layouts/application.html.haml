@@ -1,0 +1,21 @@
+!!! XML
+!!!
+%html
+  %head
+    %title Benefits Counseling :: Online Intervention
+    = stylesheet_link_tag 'scaffold', 'bc'
+    = javascript_include_tag :defaults
+    = csrf_meta_tag
+
+  %body
+    #header Header stuff
+
+    %hr
+
+    #content
+      %p.notice= notice
+      = yield 
+
+    %hr
+    #footer
+      Footer Stuff

@@ -1,0 +1,18 @@
+%h1 Questions
+
+%table
+  %tr
+  %th Short Name
+  %th Content
+  
+  - @questions.each do |question|
+    %tr
+      %td= question.name_short
+      %td= question.content
+      %td= link_to 'Show', [:admin, question]
+      %td= link_to 'Edit', edit_admin_question_path(question)
+      %td= link_to 'Destroy', [:admin, 	question], :confirm => 'Are you sure?', :method => :delete
+
+<br />
+
+= link_to 'New question', new_admin_question_path
