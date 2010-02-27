@@ -9,10 +9,6 @@ gem "rails", "3.0.0.beta"
 
 gem "rack"
 
-# ActiveRecord requires a database adapter. By default,
-# Rails has selected sqlite3.
-gem "sqlite3-ruby", :require => "sqlite3"
-
 ## Bundle the gems you use:
 # gem "bj"
 # gem "hpricot", "0.6"
@@ -30,3 +26,4 @@ gem "compass"
 # end
 
 gem "mysql", :group => :production
+gem "sqlite3-ruby", :require => "sqlite3", :group => :development

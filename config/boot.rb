@@ -4,8 +4,6 @@ begin
 rescue LoadError
   require 'rubygems'
   require 'bundler'
-  require 'rack'
-  #JH adding rack for Passenger?
   Bundler.setup
 
   # To use 2.x style vendor/rails and RubyGems
