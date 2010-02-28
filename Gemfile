@@ -16,7 +16,7 @@ gem "rack"
 # gem "aws-s3", :require => "aws/s3"
 
 gem "haml"
-gem "compass"
+#gem "compass"
 #gem "fancy-buttons"
 
 ## Bundle gems used only in certain environments:
