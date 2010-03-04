@@ -14,6 +14,9 @@ ActiveRecord::Schema.define(:version => 20100226025018) do
   create_table "questions", :force => true do |t|
     t.string   "name_short"
     t.text     "content"
+    t.integer  "lft"
+    t.integer  "rgt"
+    t.integer  "parent_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

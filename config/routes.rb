@@ -5,8 +5,9 @@ Obci::Application.routes.draw do |map|
   namespace :admin do
     resources :questions
     resources :surveys
+    root :to => "admin/admin#index"
   end
-
+ 
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

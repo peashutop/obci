@@ -16,14 +16,29 @@ gem "rack"
 # gem "aws-s3", :require => "aws/s3"
 
 gem "haml"
+gem "awesome_nested_set" #TODO requires plugin as well? confusing.
+
 #gem "compass"
 #gem "fancy-buttons"
 
 ## Bundle gems used only in certain environments:
-# gem "rspec", :group => :test
-# group :test do
-#   gem "webrat"
-# end
+
+group :test do
+	 gem "test-unit"
+   gem "webrat"
+	 gem "rspec"
+	 gem "rspec-rails"
+	 gem "cucumber"
+	 gem "cucumber-rails"
+   gem "capybara"
+	 gem "database_cleaner"
+   # http://github.com/aslakhellesoy/cucumber-rails/blob/master/README.rdoc
+end
 
 gem "mysql", :group => :production
+
 gem "sqlite3-ruby", :require => "sqlite3", :group => :development
+
+
+
+
