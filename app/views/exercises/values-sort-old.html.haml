@@ -1,0 +1,22 @@
+- content_for :head do
+  = javascript_include_tag 'exercises/values_sort.js'
+
+%h1 Values Card Sort
+
+#instructions
+  Instructions text
+
+#values-universe.connectedSortable
+  %h2 Choose your favorite values
+
+  -2.times do |i|
+    %div(id="values-universe#{i+1}" class="connectedSortable")
+      -15.times do |j|
+        .item
+          ="Item #{(i==0 ? 0 : 15)+(j+1)}"
+
+#selected-values.connectedSortable
+  %h2 Your Favorite Values
+
+#bottom-text
+  Bottom text
