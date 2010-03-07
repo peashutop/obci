@@ -1,0 +1,32 @@
+- content_for :head do
+  = javascript_include_tag 'exercises/values_sort.js'
+
+%h1 Values Card Sort
+
+#instructions
+  Instructions text
+
+%h2 Choose your favorite values
+#card-stack
+  -30.times do |i|
+    %div(class="#{i+1} value-card from-stack")
+      ="Value #{i+1}"
+
+#choice-columns
+  #least-important.connectedSortable
+    %h2 Least Important
+  
+  #somewhat-important.connectedSortable
+    %h2 Somewhat Important
+  
+  #most-important.connectedSortable
+    %h2 Most important
+  
+  #bottom-text
+    Bottom text
+
+
+<br />
+Hello?
+#trash-bin
+  %h3 Trash bin
