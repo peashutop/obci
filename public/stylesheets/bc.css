@@ -38,15 +38,17 @@
 #card-stack {
   float: left;
   width: 600px;
-  height: 100px;
+  height: 80px;
   margin-left: 250px;
+  margin-bottom: 0;
   padding: 1em; }
   #card-stack .value-card {
     width: 500px;
     height: 70px;
     text-align: center;
     border: 4px double gray;
-    padding-top: 22px; }
+    padding-top: 22px;
+    background-color: #EDF4F7; }
 
 #choice-columns {
   clear: both; }
