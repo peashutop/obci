@@ -3,25 +3,31 @@ $(document).ready(function() {
 var currentCardStackPosition = 0;
 
 var cycle_options = {
-	fx: 'shuffle',
-	speed: 'fast',
-	timeout: 0,
-	next: '#next-card, #card-stack',
-	prev: '#prev-card',
-	after: function(currSlideElement, nextSlideElement, options, forwardFlag) {
-	  console.debug(this);
-	  console.log(options.currSlide);
-	  currentCardStackPosition = options.currSlide;
-	  console.log(currentCardStackPosition);
-	} 
+  fx: 'shuffle',
+  speed: 'fast',
+  timeout: 0,
+  next: '#next-card, #card-stack',
+  prev: '#prev-card',
+  after: function(currSlideElement, nextSlideElement, options, forwardFlag) {
+    console.debug(this);
+    console.log(options.currSlide);
+    currentCardStackPosition = options.currSlide;
+    console.log(currentCardStackPosition);
+  } 
 }
 
   $("#card-stack").cycle(cycle_options);
 
-    $(".value-card").draggable({
-  connectToSortable: "#least-important, #somewhat-important, #most-important",
-  helper: 'clone'
-    });
+  $(".value-card .value").draggable({
+    connectToSortable: "#least-important, #somewhat-important, #most-important",
+    helper: function() {
+	  myClone = $(this).clone();
+	  $(myClone).addClass('dragging-clone');
+	  //$(myClone).text( $(myClone).text() + '--clone' );
+	  return myClone;
+    } 
+//  helper: 'original' // API says "helper must be set to 'clone' in order to work flawlessly"
+  });
 
 //  $("#card-stack").sortable({
 //    connectWith: '.connectedSortable',
@@ -73,21 +79,26 @@ var cycle_options = {
 			// and ui.item refers to the original, which stays where it came from, and not the new element
 			//so, we'll grab it by id /and/ class, since, at the moment, it shares an ID with its original
 			//this applies to the original item, not our new copy, which i seem to no totally direct way of selecting
-				original_guy = ui.item;
-				original_guy.addClass('ive-been-cloned-and-am-about-to-disappear');
-				original_guy.removeAttr('style');
+				original_value = ui.item;
+				original_card  = original_value.parent();
+				console.log("original card:");
+				console.debug(original_card);
+				original_card.addClass('ive-been-cloned-and-am-about-to-disappear');
+				original_card.removeAttr('style');
+				original_card.removeAttr('style');
 
-				card_classes = original_guy.attr('class').split(' ');
-				faux_card_id = card_classes[0]; 
+
+				card_classes = original_value.attr('class').split(' ');
+				faux_value_id = card_classes[0]; 
 
 				console.log("OUR CLASSES: " + card_classes);
-				console.log("FAUX ID: " + faux_card_id);
+				console.log("FAUX ID: " + faux_value_id);
 
-				our_new_guy = $('#choice-columns .' + faux_card_id);
+				our_new_guy = $('#choice-columns .' + faux_value_id);
 
 				$("#card-stack").cycle('stop');
-				//original_guy.remove();
-                original_guy.appendTo($('#trash-bin'));
+				
+                original_card.appendTo($('#trash-bin'));
 
 				$("#card-stack").cycle({
 				fx: 'shuffle',
