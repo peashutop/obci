@@ -1,7 +1,10 @@
 Obci::Application.routes.draw do |map|
 
-  resources :questions
-  resources :surveys
+  root :to => "home#index"
+  
+  namespace :exercises do
+    match "values_sort" => "exercises/values_sort#index", :as => :values_sort
+  end
 
   namespace :admin do
     resources :questions
@@ -9,9 +12,6 @@ Obci::Application.routes.draw do |map|
     root :to => "admin/admin#index"
   end
 
-  namespace :exercises do
-    match 'values_sort' => "exercises/values_sort#index"
-  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
