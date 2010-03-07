@@ -24,14 +24,14 @@ gem "awesome_nested_set" #TODO requires plugin as well? confusing.
 ## Bundle gems used only in certain environments:
 
 
-gem "test-unit", :group => :test
-gem "webrat", :group => :test
-gem "rspec", :group => :test
-gem "rspec-rails", :group => :test
-gem "cucumber", :group => :test
-gem "cucumber-rails", :group => :test
-gem "capybara", :group => :test
-gem "database_cleaner", :group => :test
+#gem "test-unit", :group => :test
+#gem "webrat", :group => :test
+#gem "rspec", :group => :test
+#gem "rspec-rails", :group => :test
+#gem "cucumber", :group => :test
+#gem "cucumber-rails", :group => :test
+#gem "capybara", :group => :test
+#gem "database_cleaner", :group => :test
 # http://github.com/aslakhellesoy/cucumber-rails/blob/master/README.rdoc
 
 gem "mysql", :group => :production
