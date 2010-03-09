@@ -21,7 +21,7 @@
   margin-left: 8em; }
 
 .value {
-  font-family: "Times, serif";
+  font-family: times, 'Times New Roman', serif;
   color: #050BB0;
   font-size: 36px;
   line-height: 54px; }
