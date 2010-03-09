@@ -1,5 +1,8 @@
 $(document).ready(function() {
 
+
+$(".value-card, .faux-value-card").corner();
+
 var currentCardStackPosition = 0;
 
 var cycle_options = {

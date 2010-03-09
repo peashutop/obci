@@ -19,7 +19,7 @@ production:
   adapter: mysql
   database: obci
   username: obci
-  password: booPEON4vvb!!!!! 
+  password: booPEON4vvb!!!!!
   host: localhost
   
 cucumber:

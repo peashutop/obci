@@ -8,17 +8,22 @@
   %p Instructions: Drag the value on the card into one of the three lists.
   %p You can shuffle through the cards by clicking on the deck or using the "prev" and "next" buttons.
 
-#card-stack
-  =#VALUES_SORT_VALUES.join(', ')
-  -#30.times do |i|
-  -VALUES_SORT_VALUES.each_with_index do |value, i|
-    %div(class="#{i+1} value-card from-stack")
-      %span(class="#{i+1} value from-stack")
-        ="#{value}"
 
-#card-stack-controls(style="clear:both; margin-left:250px; margin-top:0")
-  %span#prev-card Prev
-  %span#next-card Next
+#card-stack-container
+
+  #faux-1.faux-value-card
+  #faux-2.faux-value-card
+  #faux-3.faux-value-card
+
+  #card-stack  
+    -VALUES_SORT_VALUES.shuffle.each_with_index do |value, i|
+      %div(class="#{i+1} value-card from-stack")
+        %span(class="#{i+1} value from-stack")
+          ="#{value}"
+
+  #card-stack-controls
+    %span#prev-card Prev
+    %span#next-card Next
 
 #choice-columns
   #least-important.connectedSortable
