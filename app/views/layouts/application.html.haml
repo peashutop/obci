@@ -3,9 +3,11 @@
 %html
   %head
     %title Benefits Counseling :: Online Intervention
+    
     = stylesheet_link_tag 'scaffold', 'bc', 'jqueryui/ui-lightness/jquery-ui-1.7.2.custom', :cache => true
     /[if lt IE 8]
       = stylesheet_link_tag 'compiled/ie.css', :media => 'screen, projection' 
+
     = javascript_include_tag 'jquery-1.3.2.min', 'jquery-ui-1.7.2.custom.min', |
                              'jquery.cycle.all.min', 'jquery.corner', 'rails', :cache => true |
     = csrf_meta_tag
@@ -13,11 +15,14 @@
 
   %body
     #header
-      header content
+      Benefits Counseling [ header info ]
+      
+    #navigation
+      Navigation links
 
     #content
       %p.notice= notice
       = yield 
 
     #footer
-      footer content
+      [ footer info ]
