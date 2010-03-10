@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-jQuery.fn.corner.defaults.useNative = false; // IE7 not cornering properly on its own
+// jQuery.fn.corner.defaults.useNative = false; // IE7 not cornering properly on its own
 
 $(".value-card, .faux-value-card").corner();
 
