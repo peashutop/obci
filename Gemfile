@@ -35,6 +35,7 @@ gem "awesome_nested_set" #TODO requires plugin as well? confusing.
 # http://github.com/aslakhellesoy/cucumber-rails/blob/master/README.rdoc
 
 gem "mysql", :group => :production
+gem "activerecord-postgresql-adapter", :group => :production
 
 gem "sqlite3-ruby", :require => "sqlite3", :group => :development
 
